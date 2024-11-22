@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import AssignmentMetrics from "../models/AssignmentMetrics";
 
 // Get assignment metrics
-export const getMetrics = async (req: Request, res: Response) => {
+export const getMetrics = async (req: Request, res: Response):Promise<any> => {
   try {
     const metrics = await AssignmentMetrics.findOne();
     if (!metrics) {

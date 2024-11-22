@@ -12,7 +12,7 @@ export const getAllOrders = async (req: Request, res: Response) => {
 };
 
 // Get a single order by ID
-export const getOrderById = async (req: Request, res: Response) => {
+export const getOrderById = async (req: Request, res: Response):Promise<any> => {
   try {
     const order = await Order.findById(req.params.id);
     if (!order) {
@@ -36,7 +36,7 @@ export const createOrder = async (req: Request, res: Response) => {
 };
 
 // Update an order's status
-export const updateOrderStatus = async (req: Request, res: Response) => {
+export const updateOrderStatus = async (req: Request, res: Response):Promise<any> => {
   try {
     const updatedOrder = await Order.findByIdAndUpdate(
       req.params.id,
@@ -55,7 +55,7 @@ export const updateOrderStatus = async (req: Request, res: Response) => {
 };
 
 // Delete an order
-export const deleteOrder = async (req: Request, res: Response) => {
+export const deleteOrder = async (req: Request, res: Response):Promise<any> => {
   try {
     const deletedOrder = await Order.findByIdAndDelete(req.params.id);
     if (!deletedOrder) {

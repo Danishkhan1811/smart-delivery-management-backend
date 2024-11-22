@@ -12,7 +12,7 @@ export const getAllDeliveryPartners = async (req: Request, res: Response) => {
 };
 
 // Get a Single Delivery Partner
-export const getDeliveryPartnerById = async (req: Request, res: Response) => {
+export const getDeliveryPartnerById = async (req: Request, res: Response):Promise<any> => {
   try {
     const partner = await DeliveryPartner.findById(req.params.id);
     if (!partner) {
@@ -46,7 +46,7 @@ export const createDeliveryPartner = async (req: Request, res: Response) => {
 };
 
 // Update an Existing Delivery Partner
-export const updateDeliveryPartner = async (req: Request, res: Response) => {
+export const updateDeliveryPartner = async (req: Request, res: Response):Promise<any> => {
   try {
     const updatedPartner = await DeliveryPartner.findByIdAndUpdate(
       req.params.id,
@@ -65,7 +65,7 @@ export const updateDeliveryPartner = async (req: Request, res: Response) => {
 };
 
 // Delete a Delivery Partner
-export const deleteDeliveryPartner = async (req: Request, res: Response) => {
+export const deleteDeliveryPartner = async (req: Request, res: Response):Promise<any> => {
   try {
     const deletedPartner = await DeliveryPartner.findByIdAndDelete(req.params.id);
     if (!deletedPartner) {
