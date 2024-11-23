@@ -19,7 +19,7 @@ const app: Application = express();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: ['http://localhost:3000', 'https://smart-delivery-management-frontend.vercel.app/dashboard']
 }));
 
 app.use(bodyParser.json());
