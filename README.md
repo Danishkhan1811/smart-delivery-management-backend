@@ -1,3 +1,6 @@
+The Deployed version of this backend is available on:
+https://smart-delivery-management-backend.onrender.com/
+
 To set up the Smart-Delivery-Management-Backend locally, follow these steps:
 
 1. Clone the repository:
