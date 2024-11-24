@@ -10,6 +10,8 @@ import { initializeMetrics } from "./controllers/assignmentMetrics";
 import deliveryPartnerRoutes from "./routes/deliveryPartner";
 import orderRoutes from "./routes/order";
 import assignmentRoutes from "./routes/assignment";
+import assignmentMetricsRoutes from "./routes/assignmentMetrics";
+
 
 // Load environment variables
 dotenv.config();
@@ -37,6 +39,7 @@ initializeMetrics().catch((err) => {
 app.use("/api/partners", deliveryPartnerRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/assignments", assignmentRoutes);
+app.use("/api/metrics", assignmentMetricsRoutes);
 
 // Default Route for Health Check
 app.get("/", (req: Request, res: Response) => {
