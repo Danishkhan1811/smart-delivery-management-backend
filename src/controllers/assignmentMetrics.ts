@@ -4,7 +4,7 @@ import AssignmentMetrics from "../models/AssignmentMetrics";
 // Get assignment metrics
 export const getMetrics = async (req: Request, res: Response):Promise<any> => {
   try {
-    const metrics = await AssignmentMetrics.findOne();
+    const metrics = await AssignmentMetrics.find();
     if (!metrics) {
       return res.status(404).json({ message: "No metrics data found." });
     }
